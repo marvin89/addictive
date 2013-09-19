@@ -2,9 +2,9 @@
     font-family: 'ExoBold';
     src: url('fonts/exo-bold-webfont.eot');
     src: url('fonts/exo-bold-webfont.eot?#iefix') format('embedded-opentype'),
-         url('fonts/exo-bold-webfont.woff') format('woff'),
-         url('fonts/exo-bold-webfont.ttf') format('truetype'),
-         url('fonts/exo-bold-webfont.svg#exobold') format('svg');
+    url('fonts/exo-bold-webfont.woff') format('woff'),
+    url('fonts/exo-bold-webfont.ttf') format('truetype'),
+    url('fonts/exo-bold-webfont.svg#exobold') format('svg');
     font-weight: bold;
     font-style: bold;
 }
@@ -13,214 +13,19 @@
     font-family: 'PTSansNarrowRegular';
     src: url('fonts/ptn57f.eot');
     src: url('fonts/ptn57f.eot') format('embedded-opentype'),
-         url('fonts/ptn57f.woff') format('woff'),
-         url('fonts/ptn57f.ttf') format('truetype'),
-         url('fonts/ptn57f.svg#PTSansNarrowRegular') format('svg');
+    url('fonts/ptn57f.woff') format('woff'),
+    url('fonts/ptn57f.ttf') format('truetype'),
+    url('fonts/ptn57f.svg#PTSansNarrowRegular') format('svg');
 }
 
 @font-face {
     font-family: 'MerriweatherSansRegular';
     src: url('fonts/merriweathersans-regular-webfont.eot');
     src: url('fonts/merriweathersans-regular-webfont.eot?#iefix') format('embedded-opentype'),
-         url('fonts/merriweathersans-regular-webfont.woff') format('woff'),
-         url('fonts/merriweathersans-regular-webfont.ttf') format('truetype'),
-         url('fonts/merriweathersans-regular-webfont.svg#merriweather_sansregular') format('svg');
+    url('fonts/merriweathersans-regular-webfont.woff') format('woff'),
+    url('fonts/merriweathersans-regular-webfont.ttf') format('truetype'),
+    url('fonts/merriweathersans-regular-webfont.svg#merriweather_sansregular') format('svg');
     font-weight: normal;
     font-style: normal;
 
-}
-
-body {
-	background-color: #e74c3c;
-}
-
-h2.logo {
-	padding: 0 0.3em;
-	color: white;
-	font-size: 3.5em;
-	margin-bottom: 0;
-	font-family: ExoBold, Helvetica, Arial, sans-serif;
-	text-shadow: 0.07em 0.1em #c0392b;
-}
-
-h2.logo span {
-	color: #f1c010;
-}
-
-input#search {
-	padding: 0em;
-	font-size: 2.5em;
-	margin: 0.65em 0;
-	background: #e74c3c url('../img/magnifier.png') left center no-repeat;
-	border: none;
-	box-shadow: none;
-	outline: none;
-	color: #f1c010;
-	height: auto;
-	text-align: right;
-	font-family: PTSansNarrowRegular, Helvetica, Arial, sans-serif;
-	float: right;
-	padding-left: 1.3em;
-	background-size: 1.2em;
-	width: 4em;
-}
-
-input#search::-webkit-input-placeholder {  
-	color: #f1c010;  
-	text-align: right;
-}
-
-input#search::-moz-placeholder {
-	color: #f1c010;
-	text-align: right;
-}
-
-input#search:-ms-placeholder {
-	color: #f1c010;
-	text-align: right;
-}
-
-ul#listing {
-	margin: 2em 0.5em;
-}
-
-ul#listing li {
-	box-shadow: 0 0.4em 0 #c0392b;
-	margin: 0 2em 3em 2em;
-	width: 13.6em;
-	border: 0.3em solid #f39c12;
-	clear: none !important;
-	position: relative;
-	padding: 0;
-	overflow: hidden;
-}
-
-ul#listing li:hover img {
-	-webkit-filter: grayscale(100%);
-	filter: grayscale(100%);
-}
-
-ul#listing li .info {
-	width: 13.1em;
-	height: 100%;
-	background: rgba(0,0,0,0.75);
-	position: absolute;
-	display: inline-block;
-	left: 0;
-	top: 100%;
-	color: white;
-	-webkit-transition: all 0.3s ease-in-out;
-    -moz-transition: all 0.3s ease-in-out;
-    -o-transition: all 0.3s ease-in-out;
-    -ms-transition: all 0.3s ease-in-out;
-    transition: all 0.3s ease-in-out;
-    text-align: center;
-}
-
-ul#listing li .info h4 {
-	color: #f1c010;
-	padding: 0.5em;
-	font-family: MerriweatherSansRegular, Helvetica, Arial, sans-serif;
-	font-size: 1.5em;
-	padding-bottom: 0;
-	text-align: left;
-}
-
-ul#listing li .info p {
-	padding: 1em;
-	font-family: PTSansNarrowRegular, Helvetica, Arial, sans-serif;
-	font-size: 1em;
-	text-align: left;
-}
-
-ul#listing li .info span {
-	font-size: 1em;
-	color: #c0392b;
-	background: #f1c010;
-	padding: 0.5em 1em;
-	box-shadow: 0 0.3em #c0392b;
-	position: absolute;
-	bottom: 1em;
-	left: 4em;
-	cursor: pointer;
-	font-family: ExoBold, Helvetica, Arial, sans-serif;
-}
-
-ul#listing li .info span:active {
-	box-shadow: none;
-	bottom: 0.7em;
-}
-
-ul#listing li:hover .info {
-	-webkit-transform: translateY(-100%);
-	-moz-transform: translateY(-100%);
-	-o-transform: translateY(-100%);
-	-ms-transform: translateY(-100%);
-	transform: translateY(-100%);
-}
-
-div#slideshow {
-	position: relative;
-}
-
-div#slideshow h3 {
-	color: white;
-	font-size: 4em;
-	text-align: center;
-	background-color: rgba(0,0,0,0.75);
-	padding: 0.5em;
-	position: absolute;
-	bottom: 0.5em;
-	width: 100%;
-	text-shadow: 0 0.1em 0 #000000;
-	font-family: MerriweatherSansRegular, Helvetica, Arial, sans-serif;
-	font-weight: normal;
-}
-
-/* Media Queries */
-
-@media only screen and (max-device-width: 480px) {
-	h2.logo {
-		font-size: 2em;
-		margin-top: 0.3em;
-	}
-
-	input#search {
-		font-size: 1.5em;
-	}
-
-	ul#listing li {
-		width: 7.5em;
-		margin: 0 1em 2em 1em;
-	}
-
-	div#slideshow h3 {
-		font-size: 1.5em;
-		padding: 0.3em;
-		bottom: 0.2em;
-	}
-
-	ul#listing li .info {
-		width: 7em;
-	}
-
-	ul#listing li .info h4 {
-		font-size: 1em;
-	}
-
-	ul#listing li .info p {
-		font-size: 0.5em;
-		padding-top: 0;
-	}
-
-	ul#listing li .info span {
-		font-size: 0.7em;
-		padding: 0.25em 0.5em;
-		bottom: 1em;
-		left: 3em;
-	}
-
-	ul#listing li .info span:active {
-		bottom: 0.9em;
-	}
 }

@@ -1,4 +1,8 @@
-addictive
+ADdictive
 =========
+Responsive portal for the most popular adds on the internet.
 
-ADdictive ads portal
+Created with:
+* Bootstrap 3
+* Flat UI
+* AngularJS

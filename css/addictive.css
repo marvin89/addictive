@@ -38,6 +38,11 @@ body {
     padding-left: 1em;
     padding-right: 1em;
 }
+
+.no-margin {
+    margin: 0;
+}
+
 /* <HEADER> */
 .logo {
     font-family: ExoBold, Helvetica, sans-serif;
@@ -54,14 +59,15 @@ div.header form{
 }
 
 .header .fui-search {
-    padding-top: 1em;
     font-size: 22px;
     text-shadow: 0.07em 0.05em #303440;
     color: #f8cb4e;
 }
 
-div.search {
-    padding-left: 0;
+a.search {
+    position: absolute;
+    top: 0.5em;
+    right: 1em;
 }
 /* </HEADER> */
 /* <FRAME> */

@@ -16,6 +16,9 @@
     <link rel="stylesheet" href="css/font-awesome.css"/>
     <link rel="stylesheet" href="css/addictive.css">
 
+    <!-- Loading Fancybox -->
+    <link rel="stylesheet" href="css/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+
     <link rel="shortcut icon" href="images/favicon.ico">
 
     <!-- HTML5 shim, for IE6-8 support of HTML5 elements. All other JS at the end of file. -->
@@ -26,19 +29,19 @@
 <body>
 
     <div class="wrapper">
-        <div class="header row">
+        <div class="header no-margin row">
             <h1 class="logo col-md-4 col-lg-4 col-sm-4">AD<span>dictive</span></h1>
-            <form class="col-xs-11 col-md-3 col-md-offset-4 col-lg-3 col-lg-offset-4 col-sm-5 col-sm-offset-2 " role="search">
+            <form class="col-xs-12 col-md-3 col-lg-3 col-sm-5 pull-right" role="search">
                 <div class="form-group">
                     <input type="text" class="form-control" placeholder="Search">
+                    <a class="search" href="#"><span class="fui-search"></span></a>
                 </div>
             </form>
-            <a href="#"><div class="search col-xs-1 col-sm-1 col-md-1 col-lg-1 pull-left"><span class="fui-search"></span></div></a>
         </div>
         <div class="clearfix"></div>
         <div class="popular">
             <!-- Scrollbar -->
-            <div class="row">
+            <div class="row no-margin">
                 <div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 col-xs-12 ">
                     <div class="scrollbar">
                         <div class="handle">
@@ -47,7 +50,7 @@
                     </div>
                 </div>
             </div>
-            <div class="row">
+            <div class="row no-margin">
                 <!-- Back / Forward -->
                 <button class="backward col-xs-1 col-sm-1 col-md-1 col-lg-1"><i class="icon-angle-left"></i></button>
                 <button class="forward col-xs-1 col-sm-1 col-md-1 col-lg-1 pull-right"><i class="icon-angle-right"></i></button>
@@ -63,7 +66,8 @@
                         <li><div><p>Title 7</p></div><img src="img/slides/7.jpg"></li>
                         <li><div><p>Title 8</p></div><img src="img/slides/8.jpg"></li>
                         <li><div><p>Title 9</p></div><img src="img/slides/9.jpg"></li>
-                        <li><div><p>Title 10</p></div><img src="img/slides/10.jpg"></li>
+                        <li><div><p>Title 10</p></div>
+                            <a href="videos/Conan Video Response to How to Lose an Object Up The Nose.mp4" class="fancybox"><img src="img/slides/10.jpg"></a></li>
                         <li><div><p>Title 11</p></div><img src="img/slides/11.jpg"></li>
                         <li><div><p>Title 12</p></div><img src="img/slides/12.jpg"></li>
                         <li><div><p>Title 13</p></div><img src="img/slides/13.jpg"></li>
@@ -89,36 +93,17 @@
                 <span class="divider"></span>
                 <button data-action="toEnd">End <i class="icon-double-angle-right"></i></button>
             </div>
-            <div class="col-md-3 col-md-offset-1">
-                <div class="thumbnail">
-                    <embed src="http://www.youtube.com/watch?v=7oFMQAEisLA">
-                    <!--<img data-src="holder.js/300x200" alt="...">-->
-                    <div class="caption">
-                        <h3>Video 1</h3>
-                        <p>...</p>
-                        <p><a href="#" class="btn btn-primary">Next</a><a href="#" class="btn btn-default">Prev</a></p>
-                    </div>
-                </div>
-            </div>
 
-            <div class="col-md-3 col-md-offset-1">
-                <div class="thumbnail">
-                    <embed src="http://www.youtube.com/watch?v=7oFMQAEisLA">
-                    <div class="caption">
-                        <h3>Video2</h3>
-                        <p>...</p>
-                        <p><a href="#" class="btn btn-primary">Next</a> <a href="#" class="btn btn-default">Prev</a></p>
-                    </div>
-                </div>
+            <!-- Columns -->
+
+            <div class="col-md-4">
+
             </div>
-            <div class="col-md-3 col-md-offset-1"><div class="thumbnail">
-                <embed src="http://www.youtube.com/watch?v=7oFMQAEisLA">
-                <div class="caption">
-                    <h3>VIdeo 3</h3>
-                    <p>...</p>
-                    <p><a href="#" class="btn btn-primary">Next</a> <a href="#" class="btn btn-default">Prev</a></p>
-                </div>
+            <div class="col-md-4">
+
             </div>
+            <div class="col-md-4">
+
             </div>
         </div>
     </div>
@@ -137,6 +122,8 @@
     <script src="js/jquery.stacktable.js"></script>
     <script src="js/sly.min.js"></script>
     <script src="js/modernizr.min.js"></script>
+    <script type="text/javascript" src="js/jquery.fancybox.pack.js"></script>
+    <script type="text/javascript" src="js/jquery.fancybox-media.js"></script>
     <script src="js/addictive.js"></script>
 
 </body>

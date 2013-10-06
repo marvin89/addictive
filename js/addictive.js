@@ -1,6 +1,7 @@
 (function($){
     $(document).ready(function(){
-       $('#popularFrame').sly({
+        /* Init Sly */
+        $('#popularFrame').sly({
             horizontal: 1,
             itemNav: 'forceCentered',
             activateMiddle: 1,
@@ -9,7 +10,7 @@
             mouseDragging: 1,
             touchDragging: 1,
             releaseSwing: 1,
-            startAt: 10,
+            startAt: 9,
             scrollBar: $('.popular .scrollbar'),
             scrollBy: 1,
             speed: 300,
@@ -24,11 +25,19 @@
             backward: $('.popular .backward'),
             prev: $('.popular .prev'),
             next: $('.popular .next')
-       });
+        });
 
+        /* Sly button mapping */
         $('.popular').on('click', 'button[data-action]', function () {
             var action = $(this).data('action');
             $('#popularFrame').sly(action);
+        });
+
+        /* Fancybox video load */
+        $(".active .fancybox").fancybox({
+            overlayOpacity: 0.3,
+            scrolling: 'no',
+            type: 'iframe'
         });
     })
 })(jQuery);

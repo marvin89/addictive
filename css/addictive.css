@@ -71,7 +71,12 @@ a.search {
     right: 1em;
 }
 /* </HEADER> */
+
 /* <FRAME> */
+.popular {
+    margin-bottom: 3em;
+}
+
 #popularFrame {
     height: 200px;
     line-height: 200px;
@@ -212,3 +217,114 @@ a.search {
     transform: rotateY(-60deg) scale(0.9);
 }
 /* End 3D */
+
+/* START Category Toggles */ 
+.category-toggles.container {
+    text-align: center;    
+}
+
+.category-toggles.container .btn-group {
+    float: none;
+}
+
+.category-toggles i[class*="icon-"] {
+    margin-right: 0.6em;
+}
+
+#high-rated-toggle {
+    background-color: #e74c3c;
+}
+
+#high-rated-toggle:hover
+#high-rated-toggle.active {
+    background-color: #c0392b;
+}
+
+#addictive-toggle {
+    background-color: #e67e22;
+}
+
+#addictive-toggle:hover,
+#addictive-toggle.active {
+    background-color: #d35400;
+}
+
+#viral-toggle {
+    background-color: #3498db;
+}
+
+#viral-toggle:hover,
+#viral-toggle.active {
+    background-color: #2980b9;
+}
+
+#all-toggle {
+    background-color: #2ecc71;
+}
+
+#all-toggle:hover,
+#all-toggle.active {
+    background-color: #27ae60;
+}
+
+.category-toggles a {
+    filter: grayscale(1);
+    -webkit-filter: grayscale(1);
+}
+
+.category-toggles a.active,
+.category-toggles a:hover {
+    filter: none;
+    -webkit-filter: none;
+}
+
+/* END Category Toggles */
+
+/* START Video Grid */
+
+#video-grid {
+    margin-top: 4em;
+}
+
+#video-grid:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+.grid-sizer {
+   width: 20%;
+}
+
+#video-grid .video {
+    width:  240px;
+    height: 240px;
+    float: left;
+    display: inline-block;
+    background-color: #333;
+    margin-bottom: 30px;
+}
+
+#video-grid .video.w2 { width: 320px; }
+#video-grid .video.w3 { width: 360px; }
+#video-grid .video.w4 { width: 400px; }
+
+#video-grid .video.h2 { height: 320px; }
+#video-grid .video.h3 { height: 360px; }
+#video-grid .video.h4 { height: 400px; }
+
+#video-grid .video.high-rated {
+    background-color: #c0392b;
+}
+
+#video-grid .video.addictive {
+    background-color: #d35400;
+}
+
+#video-grid .video.viral {
+    background-color: #2980b9;
+}
+
+/* END Video Grid */
+
+

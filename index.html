@@ -95,24 +95,51 @@
                 <button data-action="toEnd">End <i class="icon-double-angle-right"></i></button>
             </div>
 
-            <!-- Columns -->
-            <div class="btn-toolbar btn-padding-wide col-md-offset-4 col-md-6 col-md-2 ">
+        </div>
+        
+        <!-- Columns -->
+        <div class="btn-toolbar category-toggles btn-padding-wide container">
 
-                <div class="btn-group btn-danger-color">
-                    <a class="btn btn-primary " href="#fakelink">
-                        <i class="fui-eye"> Most Views</i>
-                    </a>
-                    <a class="btn btn-primary" href="#fakelink">
-                        <i class="fui-location">  Near You </i>
-                    </a>
-                    <a class="btn btn-primary active" href="#fakelink">
-                        <i class="fui-heart"> Most Likes</i>
-                    </a>
-
-                </div>
+            <div class="btn-group col-md-12">
+                <a id="high-rated-toggle" rel=".high-rated" class="btn btn-primary col-md-3" href="#fakelink">
+                    <i class="icon-star icon-large"></i> Highest Rated
+                </a>
+                <a id="addictive-toggle" rel=".addictive" class="btn btn-primary col-md-3" href="#fakelink">
+                    <i class="icon-magnet icon-large"></i>  Addictive
+                </a>
+                <a id="viral-toggle" rel=".viral" class="btn btn-primary col-md-3" href="#fakelink">
+                    <i class="icon-group icon-large"></i>  Viral
+                </a>
+                <a id="all-toggle" rel=".high-rated, .addictive, .viral" class="btn btn-primary col-md-3 active" href="#fakelink">
+                    <i class="icon-asterisk icon-large"></i>  All
+                </a>
 
             </div>
 
+        </div>
+        
+        <!-- Video Grid -->
+        <div class="row no-margin thumbnails" id="video-grid">
+            <div class="video viral w2 h2"></div>
+            <div class="video addictive"></div>
+            <div class="video w2 viral"></div>
+            <div class="video high-rated"></div>
+            <div class="video viral"></div>
+            <div class="video high-rated"></div>
+            <div class="video addictive"></div>
+            <div class="video high-rated"></div>
+            <div class="video w2 viral"></div>
+            <div class="video high-rated"></div>
+            <div class="video addictive"></div>
+            <div class="video w2 h2 viral"></div>
+            <div class="video addictive"></div>
+            <div class="video high-rated"></div>
+            <div class="video w2 h2 viral"></div>
+            <div class="video high-rated"></div>
+            <div class="video addictive"></div>
+            <div class="video h2 high-rated"></div>
+            <div class="video high-rated"></div>
+            <div class="video addictive"></div>
         </div>
     </div>
 
@@ -132,6 +159,7 @@
     <script src="js/modernizr.min.js"></script>
     <script type="text/javascript" src="js/jquery.fancybox.pack.js"></script>
     <script type="text/javascript" src="js/jquery.fancybox-media.js"></script>
+    <script type="text/javascript" src="js/masonry.pkgd.min.js"></script>
     <script src="js/addictive.js"></script>
 
 </body>

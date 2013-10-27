@@ -40,28 +40,13 @@
             $('#popularFrame').sly(action);
         });
         
-        /* Inhibit click on link */
-        $('#popularFrame ul li a.fancybox').click(function(e){
-            e.preventDefault();
-            
-            /* Fancybox video load */
-            if ($(this).parents('li').hasClass('active')) {
-                $(this).fancybox({
-                    overlayOpacity: 0.3,
-                    scrolling: 'no',
-                    type: 'iframe',
-                    live: false
-                });
-            }
-            
-//            $(this).unbind('click.fb-start');
-        });
-        
         /* Masonry videos */
         $('#video-grid').masonry({
-            columnWidth: 60,
+            columnWidth: 200,
             itemSelector: '#video-grid .video',
-            gutter: 30
+            gutter: 20,
+            isFitWidth: true,
+            isAnimated: true
         });  
         
     })

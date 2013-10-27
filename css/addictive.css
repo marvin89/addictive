@@ -32,7 +32,7 @@
 
 body {
     /*background: #2c3e50;*/
-    background: #3f5666;
+    background: #BDC3C7;
 }
 
 * {
@@ -52,11 +52,11 @@ body {
 .logo {
     font-family: ExoBold, Helvetica, sans-serif;
     text-shadow: 0.07em 0.05em #303440;
-    color: #ea6044;
+    color: #C0392B;
 }
 
 .logo span {
-    color: #f8cb4e;
+    color: #F1C40F;
 }
 
 div.header form{
@@ -66,7 +66,7 @@ div.header form{
 .header .fui-search {
     font-size: 22px;
     text-shadow: 0.07em 0.05em #303440;
-    color: #f8cb4e;
+    color: #F1C40F;
 }
 
 a.search {
@@ -186,7 +186,7 @@ a.search {
 .popular button {
     background: transparent;
     color: #ffffff;
-    text-shadow: 0.07em 0.05em #303440;
+    text-shadow: 0.07em 0.05em #7F8C8D;
     border: 0;
 }
 
@@ -315,21 +315,48 @@ a.search {
     margin-top: 4em;
 }
 
+<<<<<<< HEAD
+=======
+#video-grid:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+.grid-sizer {
+   /*width: 20%;*/
+}
+
+>>>>>>> origin/Mircea
 #video-grid .video {
     width:  200px;
     height: 200px;
     float: left;
     display: inline-block;
     background-color: #333;
+<<<<<<< HEAD
     margin-bottom: 20px;
 }
 
 #video-grid .video.w2 { width: 420px; }
 
 #video-grid .video.h2 { height: 300px; }
+=======
+    margin-bottom: 15px;
+    color: #fff;
+}
+
+#video-grid .video.w2 { width: 240px; }
+#video-grid .video.w3 { width: 360px; }
+#video-grid .video.w4 { width: 490px; }
+
+#video-grid .video.he2 { height: 320px; }
+#video-grid .video.he3 { height: 360px; }
+#video-grid .video.he4 { height: 490px; }
+>>>>>>> origin/Mircea
 
 #video-grid .video.high-rated {
-    background-color: #c0392b;
+    background-color: #C0392B;
 }
 
 #video-grid .video.addictive {
@@ -340,6 +367,38 @@ a.search {
     background-color: #2980b9;
 }
 
+.video div.title {
+    margin-left: 3%;
+    font-size: 1.3em;
+}
+
+.video div.views {
+    position: absolute;
+    width: auto;
+    top: 92%;
+    right: 3%;
+    color: #fff;
+    font-size: 1.1em;
+}
+
+.video div.rate {
+    position: absolute;
+    width: auto;
+    margin-left: 3%;
+    top: 92%;
+    right: auto;
+    color: #fff;
+    font-size: 1.1em;
+}
+
+.video div.shares {
+    position: absolute;
+    width: auto;
+    top: 92%;
+    right: 40%;
+    color: #fff;
+    font-size: 1.1em;
+}
 /* END Video Grid */
 
 

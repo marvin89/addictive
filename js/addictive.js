@@ -40,13 +40,28 @@
             $('#popularFrame').sly(action);
         });
         
+<<<<<<< HEAD
+=======
+        /* Inhibit click on link */
+        $('#popularFrame ul li a.fancybox, #video-grid .video a.fancybox').fancybox({
+            overlayOpacity: 0.3,
+            scrolling: 'no',
+            type: 'iframe',
+            live: false
+        });
+
+>>>>>>> origin/Mircea
         /* Masonry videos */
         $('#video-grid').masonry({
             columnWidth: 200,
             itemSelector: '#video-grid .video',
+<<<<<<< HEAD
             gutter: 20,
             isFitWidth: true,
             isAnimated: true
+=======
+            gutter: 25
+>>>>>>> origin/Mircea
         });  
         
     })

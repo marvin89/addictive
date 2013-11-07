@@ -17,7 +17,7 @@
             mouseDragging: 1,
             touchDragging: 1,
             releaseSwing: 1,
-            startAt: 9,
+            startAt: 5,
             scrollBar: $('.popular .scrollbar'),
             scrollBy: 1,
             speed: 300,
@@ -42,7 +42,7 @@
         
         /* Masonry videos */
         $('#video-grid').masonry({
-            columnWidth: 200,
+            columnWidth: 240,
             itemSelector: '#video-grid .video',
             gutter: 20,
             isFitWidth: true,

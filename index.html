@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <!--[if IE 8]> <html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" ng-app> <!--<![endif]-->
 
 <head>
     <meta charset="utf-8">
@@ -55,28 +55,18 @@
                 <button class="backward col-xs-1 col-sm-1 col-md-1 col-lg-1"><i class="fa fa-chevron-left"></i></button>
                 <button class="forward col-xs-1 col-sm-1 col-md-1 col-lg-1 pull-right"><i class="fa fa-chevron-right"></i></button>
                 <!-- Slides -->
-                <div id="popularFrame" class="col-lg-10 col-md-10 col-sm-10 col-xs-10 ">
+                <div id="popularFrame" class="col-lg-10 col-md-10 col-sm-10 col-xs-10" ng-controller="popularVideos">
                     <ul class="slidee">
-                        <li><div style="background: url(img/slides/1.jpg);"><p>Title 1</p></div></li>
-                        <li><div style="background: url(img/slides/2.jpg);"><p>Title 2</p></div></li>
-                        <li><div style="background: url(img/slides/3.jpg);"><p>Title 3</p></div></li>
-                        <li><div style="background: url(img/slides/4.jpg);"><p>Title 4</p></div></li>
-                        <li><div style="background: url(img/slides/5.jpg);"><p>Title 5</p></div></li>
-                        <li><div style="background: url(img/slides/6.jpg);"><p>Title 6</p></div></li>
-                        <li><div style="background: url(img/slides/7.jpg);"><p>Title 7</p></div></li>
-                        <li><div style="background: url(img/slides/8.jpg);"><p>Title 8</p></div></li>
-                        <li><div style="background: url(img/slides/9.jpg);"><p>Title 9</p></div></li>
-                        <li><div style="background: url(img/slides/10.jpg);"><p><span>Title 10</span><a href="videos/Conan Video Response to How to Lose an Object Up The Nose.mp4" class="html5lightbox" data-group="popular"><i class="fa fa-play-circle-o"></i></a></p></div></li>
-                        <li><div style="background: url(img/slides/11.jpg);"><p><span>Title 11</span><a href="http://www.youtube.com/watch?v=q6cgoKY6-Xc" class="html5lightbox" data-group="popular"><i class="fa fa-play-circle-o"></i></a></p></div></li>
-                        <li><div style="background: url(img/slides/12.jpg);"><p>Title 12</p></div></li>
-                        <li><div style="background: url(img/slides/13.jpg);"><p>Title 13</p></div></li>
-                        <li><div style="background: url(img/slides/14.jpg);"><p>Title 14</p></div></li>
-                        <li><div style="background: url(img/slides/15.jpg);"><p>Title 15</p></div></li>
-                        <li><div style="background: url(img/slides/16.jpg);"><p>Title 16</p></div></li>
-                        <li><div style="background: url(img/slides/17.jpg);"><p>Title 17</p></div></li>
-                        <li><div style="background: url(img/slides/18.jpg);"><p>Title 18</p></div></li>
-                        <li><div style="background: url(img/slides/19.jpg);"><p>Title 19</p></div></li>
-                        <li><div style="background: url(img/slides/20.jpg);"><p>Title 20</p></div></li>
+                        <li ng-repeat="video in videos">
+                            <div style="background: url(img/slides/{{video.thumbnail}})">
+                                <p>
+                                    <span>{{video.title}}</span>
+                                    <a href="videos/{{video.link}}" class="html5lightbox" data-group="popular">
+                                        <i class="fa fa-play-circle-o"></i>
+                                    </a>
+                                </p>
+                            </div>
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -105,17 +95,30 @@
                     <i class="fa fa-magnet fa-lg"></i>  Addictive
                 </a>
                 <a id="viral-toggle" rel=".viral" class="btn btn-primary col-md-3" href="#fakelink">
-                    <i class="fa fa-group fa-lg"></i>  Viral
+                    <i class="fa fa-globe fa-lg"></i>  Viral
                 </a>
-                <a id="all-toggle" rel=".high-rated, .addictive, .viral" class="btn btn-primary col-md-3 active" href="#fakelink">
+                <a id="all-toggle" rel="" class="btn btn-primary col-md-3 active" href="#fakelink">
                     <i class="fa fa-asterisk fa-lg"></i>  All
                 </a>
             </div>
         </div>
         
         <!-- Video Grid -->
-        <div class="row no-margin thumbnails" id="video-grid">
-            <div class="video viral">
+        <div class="row no-margin thumbnails" id="video-grid" ng-controller="videoList">
+            <div class="video" ng-class="{'viral': video.share > 200, 'addictive': video.views > 100, 'high-rated': video.rating > 3.5, 'w2': video.views > 200, 'w2 h2': video.views > 350 && video.share > 200}" ng-repeat="video in videos">
+                <a href="videos/{{video.link}}" class="html5lightbox">
+                    <img src="{{video.thumbnail}}" alt="{{video.title}}">
+                </a>
+                <div>
+                    <div class="title">{{video.title}}</div>
+                    <div class="status">
+                        <div class="views">{{video.views}} <i class="fa fa-magnet"></i></div>
+                        <div class="rate">{{video.rating}} <i class="fa fa-star"></i></div>
+                        <div class="shares">{{video.share}} <i class="fa fa-globe"></i></div>
+                    </div>
+                </div>    
+            </div>
+            <!-- <div class="video viral">
                 <a href="http://www.youtube.com/watch?v=6tCtM8UEQv8" class="fancybox"><img src="http://i.ytimg.com/vi/6tCtM8UEQv8/0.jpg" ></a>
                 <div>
                     <div class="title">Titlul video-ului</div>
@@ -294,12 +297,13 @@
                     <div class="rate">55 <i class="fa fa-star"></i></div>
                     <div class="shares">243 <i class="fa fa-group"></i></div>
                 </div>
-            </div>
+            </div> -->
         </div>
     </div>
 
     <!-- Load JS here for greater good =============================-->
     <script src="js/jquery-1.8.3.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js"></script>
     <script src="js/jquery-ui-1.10.3.custom.min.js"></script>
     <script src="js/jquery.ui.touch-punch.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
@@ -314,6 +318,7 @@
     <script src="js/modernizr.min.js"></script>
     <script type="text/javascript" src="js/html5lightbox.js"></script>
     <script type="text/javascript" src="js/masonry.pkgd.min.js"></script>
+    <script type="text/javascript" src="js/controllers.js"></script>
     <script src="js/addictive.js"></script>
 
 </body>

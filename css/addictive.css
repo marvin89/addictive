@@ -316,65 +316,89 @@ a.search {
 }
 
 #video-grid .video {
-    width:  200px;
-    height: 200px;
+    width:  240px;
+    height: 240px;
     float: left;
     display: inline-block;
-    background-color: #333;
+    background-color: #ecf0f1;
     margin-bottom: 20px;
+    color: #34495e;
 }
 
-#video-grid .video.w2 { width: 420px; }
-
-#video-grid .video.h2 { height: 300px; }
-
-#video-grid .video.high-rated {
-    background-color: #C0392B;
+#video-grid .video .status {
+    overflow: hidden;
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
 }
 
-#video-grid .video.addictive {
-    background-color: #d35400;
+#video-grid .video .status div {
+    font-size: 14px;
+    width: 33.3%;
+    float: left;
+    text-align: center;
+    padding: 5px;
+    outline: 1px solid #95a5a6;
+    line-height: 18px;
 }
 
-#video-grid .video.viral {
-    background-color: #2980b9;
+#video-grid .video.w2 { width: 500px; }
+
+#video-grid .video.h2 { height: 400px; }
+
+#video-grid .video.addictive .views {
+    color: #d35400;
+    font-size: 18px;
+    /*box-shadow: 0px 0px 5px #e67e22;*/
+}
+
+#video-grid .video.viral .shares {
+    color: #2980b9;
+    font-size: 18px;
+    /*box-shadow: 0px 0px 5px #3498db;*/
+}
+
+#video-grid .video.high-rated .rate {
+    color: #C0392B;
+    font-size: 18px;
+    /*box-shadow: 0px 0px 5px #e74c3c;*/
 }
 
 .video img {
-    width: 80%;
+    width: 100%;
 }
 
 .video div.title {
     margin-left: 5px;
     font-size: 16px;
-    color: #fff;
+    padding: 5px;
 }
 
-.video div.views {
-    position: absolute;
-    width: auto;
-    bottom: 5px;
-    right: 5px;
-    color: #fff;
-    font-size: 14px;
+#video-grid .video.w2:not(.h2) a {
+    float: left;
+    width: 50%;
+    overflow: hidden;
+    height: 100%;
+    text-indent: -18%;
 }
 
-.video div.rate {
-    position: absolute;
+#video-grid .video.w2:not(.h2) a img {
+    height: 100%;
     width: auto;
-    bottom: 5px;
-    left: 5px;
-    color: #fff;
-    font-size: 14px;
 }
 
-.video div.shares {
-    position: absolute;
-    width: auto;
-    bottom: 5px;
-    left: 40%;
-    color: #fff;
-    font-size: 14px;
+#video-grid .video.w2:not(.h2) .title {
+    float: left;
+}
+
+#video-grid .video.w2:not(.h2) .status {
+    width: 50%;
+    right: 0px;
+}
+
+#video-grid .video.w2.h2 .title,
+#video-grid .video.w2.h2 .status div {
+    font-size: 20px;
 }
 /* END Video Grid */
 

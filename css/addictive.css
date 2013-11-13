@@ -59,6 +59,10 @@ body {
     color: #F1C40F;
 }
 
+.header {
+    margin-bottom: 25px;
+}
+
 div.header form{
     padding-top: 1em;
 }
@@ -226,6 +230,7 @@ a.search {
     transform: rotateY(60deg) scale(0.9);
     -webkit-transition: -webkit-transform 300ms ease-out;
     transition: transform 300ms ease-out;
+    overflow: hidden;
 }
 
 #popularFrame ul li img {

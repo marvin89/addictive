@@ -1,5 +1,17 @@
 (function($){
     $(document).ready(function(){
+        /* Search */
+        $('#search').on('keyup', function(){
+            $('#popularFrame').data('sly').reload();
+            $('#popularFrame ul.slidee li').removeClass('active');
+            $('#popularFrame').data('sly').activatePage(Math.ceil($('#popularFrame ul.slidee li').length/2));
+            $('#popularFrame').data('sly').toCenter();
+            /* Fix for one result */
+            if ($('#popularFrame ul.slidee li').length === 1) {
+                $('#popularFrame ul.slidee li').addClass('active');
+            } 
+        });
+
         /* Toggle buton in group */
         $(".btn-group a").on('click', function() {
             $(this).siblings().removeClass("active").end().addClass("active");
@@ -48,14 +60,19 @@
             isFitWidth: true,
             isAnimated: true
         });  
+
+        /* Init Fancybox */
+        $('.fancybox').fancybox({
+            type: 'iframe',
+            padding: 0
+        });
         
-    })
+    });
     
     toggleVideos = function(cls) {
         $('#video-grid .video').hide();
         $('#video-grid .video'+cls).show();
         $('#video-grid').masonry();
-        
     }
     
 })(jQuery);

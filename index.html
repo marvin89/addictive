@@ -17,7 +17,7 @@
     <link rel="stylesheet" href="css/addictive.css">
 
     <!-- Loading Fancybox -->
-    <link rel="stylesheet" href="css/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+    <link rel="stylesheet" href="css/jquery.fancybox.css" type="text/css" media="screen" />
 
     <link rel="shortcut icon" href="images/favicon.ico">
 
@@ -33,7 +33,7 @@
             <h1 class="logo col-md-4 col-lg-4 col-sm-4">AD<span>dictive</span></h1>
             <form class="col-xs-12 col-md-3 col-lg-3 col-sm-5 pull-right" role="search">
                 <div class="form-group">
-                    <input type="text" class="form-control" placeholder="Search">
+                    <input type="text" ng-model="search" id="search" class="form-control" placeholder="Search">
                     <a class="search" href="#"><span class="fui-search"></span></a>
                 </div>
             </form>
@@ -45,7 +45,7 @@
                 <div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 col-xs-12 ">
                     <div class="scrollbar">
                         <div class="handle">
-                            <div class="mousearea"></div>
+                            <div class="mousearea"><i class="fa fa-arrows-h"></i></div>
                         </div>
                     </div>
                 </div>
@@ -57,11 +57,11 @@
                 <!-- Slides -->
                 <div id="popularFrame" class="col-lg-10 col-md-10 col-sm-10 col-xs-10" ng-controller="popularVideos">
                     <ul class="slidee">
-                        <li ng-repeat="video in videos">
+                        <li ng-repeat="video in videos | filter: search">
                             <div style="background: url(img/slides/{{video.thumbnail}})">
                                 <p>
                                     <span>{{video.title}}</span>
-                                    <a href="videos/{{video.link}}" class="html5lightbox" data-group="popular">
+                                    <a href="videos/{{video.link}}" class="fancybox" rel="newest">
                                         <i class="fa fa-play-circle-o"></i>
                                     </a>
                                 </p>
@@ -118,186 +118,6 @@
                     </div>
                 </div>    
             </div>
-            <!-- <div class="video viral">
-                <a href="http://www.youtube.com/watch?v=6tCtM8UEQv8" class="fancybox"><img src="http://i.ytimg.com/vi/6tCtM8UEQv8/0.jpg" ></a>
-                <div>
-                    <div class="title">Titlul video-ului</div>
-                    <div class="views">123 <i class="fa fa-eye"></i></div>
-                    <div class="rate">55 <i class="fa fa-star"></i></div>
-                    <div class="shares">243 <i class="fa fa-group"></i></div>
-                </div>
-            </div>
-            <div class="video addictive">
-                <a href="http://www.youtube.com/watch?v=2JnYcuRW_qo" class="fancybox"><img src="http://i.ytimg.com/vi/2JnYcuRW_qo/0.jpg" ></a>
-                <div>
-                    <div class="title">Titlul video-ului</div>
-                    <div class="views">123 <i class="fa fa-eye"></i></div>
-                    <div class="rate">55 <i class="fa fa-star"></i></div>
-                    <div class="shares">243 <i class="fa fa-group"></i></div>
-                </div>
-            </div>
-            <div class="video w2 h2 viral">
-                <a href="http://www.youtube.com/watch?v=Xbd7TtKrDFc" class="fancybox"><img src="http://i.ytimg.com/vi/Xbd7TtKrDFc/0.jpg" ></a>
-                <div>
-                    <div class="title">Titlul video-ului</div>
-                    <div class="views">123 <i class="fa fa-eye"></i></div>
-                    <div class="rate">55 <i class="fa fa-star"></i></div>
-                    <div class="shares">243 <i class="fa fa-group"></i></div>
-                </div>
-            </div>
-            <div class="video high-rated">
-                <a href="http://www.youtube.com/watch?v=R55e-uHQna0" class="fancybox"><img src="http://i.ytimg.com/vi/R55e-uHQna0/0.jpg" ></a>
-                <div>
-                    <div class="title">Titlul video-ului</div>
-                    <div class="views">123 <i class="fa fa-eye"></i></div>
-                    <div class="rate">55 <i class="fa fa-star"></i></div>
-                    <div class="shares">243 <i class="fa fa-group"></i></div>
-                </div>
-            </div>
-            <div class="video viral">
-                <a href="http://www.youtube.com/watch?v=ANhmS6QLd5Q" class="fancybox"><img src="http://i.ytimg.com/vi/ANhmS6QLd5Q/0.jpg" ></a>
-                <div>
-                    <div class="title">Titlul video-ului</div>
-                    <div class="views">123 <i class="fa fa-eye"></i></div>
-                    <div class="rate">55 <i class="fa fa-star"></i></div>
-                    <div class="shares">243 <i class="fa fa-group"></i></div>
-                </div>
-            </div>
-            <div class="video high-rated">
-                <a href="videos/2013 Volkswagen Jetta Safety Commercial - Baby (LD).mp4" class="fancybox"><img src="http://i.ytimg.com/vi/qGP7539ILPU/0.jpg" ></a>
-                <div>
-                    <div class="title">Titlul video-ului</div>
-                    <div class="views">123 <i class="fa fa-eye"></i></div>
-                    <div class="rate">55 <i class="fa fa-star"></i></div>
-                    <div class="shares">243 <i class="fa fa-group"></i></div>
-                </div>
-            </div>
-            <div class="video addictive">
-                <a href="http://www.youtube.com/watch?v=ANhmS6QLd5Q" class="fancybox"><img src="http://i.ytimg.com/vi/ANhmS6QLd5Q/0.jpg" ></a>
-                <div>
-                    <div class="title">Titlul video-ului</div>
-                    <div class="views">123 <i class="fa fa-eye"></i></div>
-                    <div class="rate">55 <i class="fa fa-star"></i></div>
-                    <div class="shares">243 <i class="fa fa-group"></i></div>
-                </div>
-            </div>
-            <div class="video high-rated">
-                <a href="http://www.youtube.com/watch?v=6tCtM8UEQv8" class="fancybox fancybox-type-iframe" ><img src="http://i.ytimg.com/vi/6tCtM8UEQv8/0.jpg" ></a>
-                <div>
-                    <div class="title">Titlul video-ului</div>
-                    <div class="views">123 <i class="fa fa-eye"></i></div>
-                    <div class="rate">55 <i class="fa fa-star"></i></div>
-                    <div class="shares">243 <i class="fa fa-group"></i></div>
-                </div>
-            </div>
-            <div class="video h2 viral">
-                <a href="http://www.youtube.com/watch?v=6tCtM8UEQv8" class="fancybox"><img src="http://i.ytimg.com/vi/6tCtM8UEQv8/0.jpg" ></a>
-                <div>
-                    <div class="title">Titlul video-ului</div>
-                    <div class="views">123 <i class="fa fa-eye"></i></div>
-                    <div class="rate">55 <i class="fa fa-star"></i></div>
-                    <div class="shares">243 <i class="fa fa-group"></i></div>
-                </div>
-            </div>
-            <div class="video high-rated">
-                <a href="http://www.youtube.com/watch?v=6tCtM8UEQv8" class="fancybox"><img src="http://i.ytimg.com/vi/6tCtM8UEQv8/0.jpg" ></a>
-                <div>
-                    <div class="title">Titlul video-ului</div>
-                    <div class="views">123 <i class="fa fa-eye"></i></div>
-                    <div class="rate">55 <i class="fa fa-star"></i></div>
-                    <div class="shares">243 <i class="fa fa-group"></i></div>
-                </div>
-            </div>
-            <div class="video h2 w2 addictive">
-                <a href="http://www.youtube.com/watch?v=6tCtM8UEQv8" class="fancybox"><img src="http://i.ytimg.com/vi/6tCtM8UEQv8/0.jpg" ></a>
-                <div>
-                    <div class="title">Titlul video-ului</div>
-                    <div class="views">123 <i class="fa fa-eye"></i></div>
-                    <div class="rate">55 <i class="fa fa-star"></i></div>
-                    <div class="shares">243 <i class="fa fa-group"></i></div>
-                </div>
-            </div>
-            <div class="video w2 h2 viral">
-                <a href="http://www.youtube.com/watch?v=6tCtM8UEQv8" class="fancybox"><img src="http://i.ytimg.com/vi/6tCtM8UEQv8/0.jpg" ></a>
-                <div>
-                    <div class="title">Titlul video-ului</div>
-                    <div class="views">123 <i class="fa fa-eye"></i></div>
-                    <div class="rate">55 <i class="fa fa-star"></i></div>
-                    <div class="shares">243 <i class="fa fa-group"></i></div>
-                </div>
-            </div>
-            <div class="video addictive">
-                <a href="http://www.youtube.com/watch?v=6tCtM8UEQv8" class="fancybox"><img src="http://i.ytimg.com/vi/6tCtM8UEQv8/0.jpg" ></a>
-                <div>
-                    <div class="title">Titlul video-ului</div>
-                    <div class="views">123 <i class="fa fa-eye"></i></div>
-                    <div class="rate">55 <i class="fa fa-star"></i></div>
-                    <div class="shares">243 <i class="fa fa-group"></i></div>
-                </div>
-            </div>
-            <div class="video high-rated">
-                <a href="http://www.youtube.com/watch?v=6tCtM8UEQv8" class="fancybox"><img src="http://i.ytimg.com/vi/6tCtM8UEQv8/0.jpg" ></a>
-                <div>
-                    <div class="title">Titlul video-ului</div>
-                    <div class="views">123 <i class="fa fa-eye"></i></div>
-                    <div class="rate">55 <i class="fa fa-star"></i></div>
-                    <div class="shares">243 <i class="fa fa-group"></i></div>
-                </div>
-            </div>
-            <div class="video w2 h2 viral">
-                <a href="http://www.youtube.com/watch?v=6tCtM8UEQv8" class="fancybox"><img src="http://i.ytimg.com/vi/6tCtM8UEQv8/0.jpg" ></a>
-                <div>
-                    <div class="title">Titlul video-ului</div>
-                    <div class="views">123 <i class="fa fa-eye"></i></div>
-                    <div class="rate">55 <i class="fa fa-star"></i></div>
-                    <div class="shares">243 <i class="fa fa-group"></i></div>
-                </div>
-            </div>
-            <div class="video high-rated">
-                <a href="http://www.youtube.com/watch?v=6tCtM8UEQv8" class="fancybox"><img src="http://i.ytimg.com/vi/6tCtM8UEQv8/0.jpg" ></a>
-                <div>
-                    <div class="title">Titlul video-ului</div>
-                    <div class="views">123 <i class="fa fa-eye"></i></div>
-                    <div class="rate">55 <i class="fa fa-star"></i></div>
-                    <div class="shares">243 <i class="fa fa-group"></i></div>
-                </div>
-            </div>
-            <div class="video addictive">
-                <a href="http://www.youtube.com/watch?v=6tCtM8UEQv8" class="fancybox"><img src="http://i.ytimg.com/vi/6tCtM8UEQv8/0.jpg" ></a>
-                <div>
-                    <div class="title">Titlul video-ului</div>
-                    <div class="views">123 <i class="fa fa-eye"></i></div>
-                    <div class="rate">55 <i class="fa fa-star"></i></div>
-                    <div class="shares">243 <i class="fa fa-group"></i></div>
-                </div>
-            </div>
-            <div class="video h2 high-rated">
-                <a href="http://www.youtube.com/watch?v=6tCtM8UEQv8" class="fancybox"><img src="http://i.ytimg.com/vi/6tCtM8UEQv8/0.jpg" ></a>
-                <div>
-                    <div class="title">Titlul video-ului</div>
-                    <div class="views">123 <i class="fa fa-eye"></i></div>
-                    <div class="rate">55 <i class="fa fa-star"></i></div>
-                    <div class="shares">243 <i class="fa fa-group"></i></div>
-                </div>
-            </div>
-            <div class="video high-rated">
-                <a href="http://www.youtube.com/watch?v=6tCtM8UEQv8" class="fancybox"><img src="http://i.ytimg.com/vi/6tCtM8UEQv8/0.jpg" ></a>
-                <div>
-                    <div class="title">Titlul video-ului</div>
-                    <div class="views">123 <i class="fa fa-eye"></i></div>
-                    <div class="rate">55 <i class="fa fa-star"></i></div>
-                    <div class="shares">243 <i class="fa fa-group"></i></div>
-                </div>
-            </div>
-            <div class="video addictive">
-                <a href="http://www.youtube.com/watch?v=6tCtM8UEQv8" class="fancybox"><img src="http://i.ytimg.com/vi/6tCtM8UEQv8/0.jpg" ></a>
-                <div>
-                    <div class="title">Titlul video-ului</div>
-                    <div class="views">123 <i class="fa fa-eye"></i></div>
-                    <div class="rate">55 <i class="fa fa-star"></i></div>
-                    <div class="shares">243 <i class="fa fa-group"></i></div>
-                </div>
-            </div> -->
         </div>
     </div>
 
@@ -314,9 +134,9 @@
     <script src="js/jquery.tagsinput.js"></script>
     <script src="js/jquery.placeholder.js"></script>
     <script src="js/jquery.stacktable.js"></script>
+    <script src="js/jquery.fancybox.pack.js"></script>
     <script src="js/sly.min.js"></script>
     <script src="js/modernizr.min.js"></script>
-    <script type="text/javascript" src="js/html5lightbox.js"></script>
     <script type="text/javascript" src="js/masonry.pkgd.min.js"></script>
     <script type="text/javascript" src="js/controllers.js"></script>
     <script src="js/addictive.js"></script>

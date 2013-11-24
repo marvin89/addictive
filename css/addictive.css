@@ -63,6 +63,20 @@ body {
     margin-bottom: 25px;
 }
 
+div.header #sign-in {
+    color: #fff;
+    font-family: ExoBold, Helvetica, sans-serif;
+    text-shadow: 0.07em 0.05em #303440;
+    font-size: 1.2em;
+    margin-top: 1.4em;
+    padding-right: 0;
+    text-align: right;
+}
+div.header #sign-in:hover{
+   color: #d6f1f8;
+
+}
+
 div.header form{
     padding-top: 1em;
 }
@@ -407,4 +421,26 @@ a.search {
 }
 /* END Video Grid */
 
+/* SIGN-IN Pop-up*/
+
+#signin-left {
+    margin-top: 2em;
+    border-right: solid 1px #c0bfcf;
+}
+#signin-right {
+    margin-top: 2em;
+}
+div#signin-left form input{
+    margin-bottom: 0.5em;
+    width: 80%;
+    margin-left: 10%;
+}
+
+div#signin-left form button {
+    margin-right: 10%;
+    padding-left: 10%;
+    padding-right: 10%;
+    float:right;
+    margin-bottom: 10px;
+}
 

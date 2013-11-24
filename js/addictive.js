@@ -62,9 +62,17 @@
         });  
 
         /* Init Fancybox */
-        $('.fancybox').fancybox({
+        $('.video .fancybox').fancybox({
             type: 'iframe',
             padding: 0
+        });
+
+        $('#sign-in').fancybox({
+            type: 'inline',
+            padding: 0,
+            width: 600,
+            autoSize: false,
+            height:300
         });
         
     });
@@ -76,3 +84,36 @@
     }
     
 })(jQuery);
+
+
+// Google API
+
+window.___gcfg = {
+    lang: 'en-US',
+    parsetags: 'onload'
+};
+
+(function() {
+    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+    po.src = 'https://apis.google.com/js/plusone.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+})();
+
+function signinCallback(authResult) {
+    if (authResult['access_token']) {
+        $.get('https://www.googleapis.com/oauth2/v1/userinfo?alt=json&key=AIzaSyDWjuuBvOiQ-HU52YChjQk8l2LLNY2Hnz8&access_token='+authResult['access_token'],
+        function(userProfile){
+           var givenName=userProfile['given_name'];
+           var familyName=userProfile['family_name'];
+           $('#sign-in').text(givenName+' '+familyName).unbind('click.fb').removeData('fancybox').removeClass('fancybox').attr('href','/profile');
+            $.fancybox.close();
+        });
+    } else if (authResult['error']) {
+        // Update the app to reflect a signed out user
+        // Possible error values:
+        //   "user_signed_out" - User is signed-out
+        //   "access_denied" - User denied access to your app
+        //   "immediate_failed" - Could not automatically log in the user
+        console.log('Sign-in state: ' + authResult['error']);
+    }
+}

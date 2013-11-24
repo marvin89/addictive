@@ -29,8 +29,11 @@
 <body>
 
     <div class="wrapper">
-        <div class="header no-margin row">
-            <h1 class="logo col-md-4 col-lg-4 col-sm-4">AD<span>dictive</span></h1>
+        <div class="header no-margin row ">
+            <h1 class="logo col-md-4 col-lg-4 col-sm-4 col-xs-8">AD<span>dictive</span></h1>
+            <div>
+                <a id="sign-in"  class="fancybox col-lg-2 col-md-2 col-xs-3 col-sm-2 col-sm-offset-1 col-md-offset-2 col-lg-offset-3" href="#signin-form">Sign In</a>
+            </div>
             <form class="col-xs-12 col-md-3 col-lg-3 col-sm-5 pull-right" role="search">
                 <div class="form-group">
                     <input type="text" ng-model="search" id="search" class="form-control" placeholder="Search">
@@ -57,7 +60,7 @@
                 <!-- Slides -->
                 <div id="popularFrame" class="col-lg-10 col-md-10 col-sm-10 col-xs-10" ng-controller="popularVideos">
                     <ul class="slidee">
-                        <li ng-repeat="video in videos | filter: search">
+                        <li class="video" ng-repeat="video in videos | filter: search">
                             <div style="background: url(img/slides/{{video.thumbnail}})">
                                 <p>
                                     <span>{{video.title}}</span>
@@ -106,7 +109,7 @@
         <!-- Video Grid -->
         <div class="row no-margin thumbnails" id="video-grid" ng-controller="videoList">
             <div class="video" ng-class="{'viral': video.share > 200, 'addictive': video.views > 100, 'high-rated': video.rating > 3.5, 'w2': video.views > 200, 'w2 h2': video.views > 350 && video.share > 200}" ng-repeat="video in videos">
-                <a href="videos/{{video.link}}" class="html5lightbox">
+                <a href="videos/{{video.link}}" class="fancybox">
                     <img src="{{video.thumbnail}}" alt="{{video.title}}">
                 </a>
                 <div>
@@ -119,6 +122,40 @@
                 </div>    
             </div>
         </div>
+    </div>
+
+    <!-- Sign In Form -->
+    <div id="signin-form" style="display: none;">
+        <div>
+            <ul class="nav nav-tabs nav-justified">
+                <li class="active"><a href="#fakelink">Sign in</a></li>
+                <li><a href="#fakelink">Sign up</a></li>
+            </ul>
+        </div>
+        <div id="signin-left" class="col-xs-6 col-sm-6 col-md-6">
+            <form id="local">
+                <input type="text" class="form-control" placeholder="Username" required="" autofocus="">
+                <input type="text" class="form-control" placeholder="Email address" required="" autofocus="">
+                <input type="password" class="form-control" placeholder="Password" required="" autofocus="">
+                <button type="submit" class="btn btn-info">Sign up</button>
+            </form>
+        </div>
+        <div id="signin-right" class="col-xs-6 col-sm-6 col-md-6">
+            <h6>Connect with</h6>
+             <span id="signinButton" class="fancybox">
+                <span
+                        class="g-signin"
+                        data-callback="signinCallback"
+                        data-clientid="790257030416.apps.googleusercontent.com"
+                        data-cookiepolicy="single_host_origin"
+                        data-requestvisibleactions="http://schemas.google.com/AddActivity"
+                        data-scope="https://www.googleapis.com/auth/plus.login https://www.googleapis.com/auth/userinfo.email https://www.googleapis.com/auth/userinfo.profile"
+                        data-theme="dark">
+                </span>
+            </span>
+            <p>&nbsp; or </p>
+        </div>
+        <div style="height: 10px;"></div>
     </div>
 
     <!-- Load JS here for greater good =============================-->

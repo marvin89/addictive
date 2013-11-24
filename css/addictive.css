@@ -35,6 +35,10 @@ body {
     background: #BDC3C7;
 }
 
+* {
+    outline: none;
+}
+
 .wrapper {
     padding-left: 1em;
     padding-right: 1em;
@@ -53,6 +57,24 @@ body {
 
 .logo span {
     color: #F1C40F;
+}
+
+.header {
+    margin-bottom: 25px;
+}
+
+div.header #sign-in {
+    color: #fff;
+    font-family: ExoBold, Helvetica, sans-serif;
+    text-shadow: 0.07em 0.05em #303440;
+    font-size: 1.2em;
+    margin-top: 1.4em;
+    padding-right: 0;
+    text-align: right;
+}
+div.header #sign-in:hover{
+   color: #d6f1f8;
+
 }
 
 div.header form{
@@ -86,7 +108,7 @@ a.search {
     list-style: none;
     margin: 0;
     padding: 0;
-    height: 100%;
+    height: 200px;
     font-size: 50px;
 }
 
@@ -98,7 +120,7 @@ a.search {
 #popularFrame ul li {
     float: left;
     width: 190px;
-    height: 100%;
+    height: 190px;
     margin: 0 1px 0 0;
     padding: 0;
     background-color: #3981B2;
@@ -111,16 +133,40 @@ a.search {
     position: absolute;
     font-size: 1em;
     color: #3f5666;
-    background: rgba(255,255,255,0.6);
-    width: 188px;
-    height: 1em;
-    margin-top: 30px;
-    text-align: left;
+    width: 100%;
+    height: 100%;
+    margin-top: 10px;
+    background-size: 110%;
 }
 
-#popularFrame ul li div p{
+#popularFrame ul li div > * {
+    display: none;
+}
+
+#popularFrame ul li.active:hover div > * {
+    display: block;
+} 
+
+#popularFrame ul li div p {
     padding-left: 0.2em;
     padding-top: 0.5em;
+    height: 100%;
+    background: rgba(255,255,255,0.8);
+}
+
+#popularFrame ul li div p span {
+    display: block;
+}
+
+#popularFrame ul li div p a {
+    display: inline-block;
+    margin: 0 auto;
+    font-size: 80px;
+    color: #ea6044;
+    line-height: 80px;
+    position: absolute;
+    bottom: 20px;
+    left: 60px;
 }
 
 #popularFrame ul li.active {
@@ -152,6 +198,7 @@ a.search {
 
 .popular .controls {
     text-align: center;
+    margin-top: 1em;
 }
 
 .popular button {
@@ -197,6 +244,7 @@ a.search {
     transform: rotateY(60deg) scale(0.9);
     -webkit-transition: -webkit-transform 300ms ease-out;
     transition: transform 300ms ease-out;
+    overflow: hidden;
 }
 
 #popularFrame ul li img {
@@ -286,78 +334,113 @@ a.search {
     margin-top: 4em;
 }
 
-#video-grid:after {
-  content: '';
-  display: block;
-  clear: both;
-}
-
-.grid-sizer {
-   /*width: 20%;*/
-}
-
 #video-grid .video {
     width:  240px;
     height: 240px;
     float: left;
     display: inline-block;
-    background-color: #333;
-    margin-bottom: 15px;
-    color: #fff;
+    background-color: #ecf0f1;
+    margin-bottom: 20px;
+    color: #34495e;
 }
 
-#video-grid .video.w2 { width: 240px; }
-#video-grid .video.w3 { width: 360px; }
-#video-grid .video.w4 { width: 490px; }
-
-#video-grid .video.he2 { height: 320px; }
-#video-grid .video.he3 { height: 360px; }
-#video-grid .video.he4 { height: 490px; }
-
-#video-grid .video.high-rated {
-    background-color: #C0392B;
+#video-grid .video .status {
+    overflow: hidden;
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
 }
 
-#video-grid .video.addictive {
-    background-color: #d35400;
+#video-grid .video .status div {
+    font-size: 14px;
+    width: 33.3%;
+    float: left;
+    text-align: center;
+    padding: 5px;
+    outline: 1px solid #95a5a6;
+    line-height: 18px;
 }
 
-#video-grid .video.viral {
-    background-color: #2980b9;
+#video-grid .video.w2 { width: 500px; }
+
+#video-grid .video.h2 { height: 400px; }
+
+#video-grid .video.addictive .views {
+    color: #d35400;
+    font-size: 18px;
+    /*box-shadow: 0px 0px 5px #e67e22;*/
+}
+
+#video-grid .video.viral .shares {
+    color: #2980b9;
+    font-size: 18px;
+    /*box-shadow: 0px 0px 5px #3498db;*/
+}
+
+#video-grid .video.high-rated .rate {
+    color: #C0392B;
+    font-size: 18px;
+    /*box-shadow: 0px 0px 5px #e74c3c;*/
+}
+
+.video img {
+    width: 100%;
 }
 
 .video div.title {
-    margin-left: 3%;
-    font-size: 1.3em;
+    margin-left: 5px;
+    font-size: 16px;
+    padding: 5px;
 }
 
-.video div.views {
-    position: absolute;
-    width: auto;
-    top: 92%;
-    right: 3%;
-    color: #fff;
-    font-size: 1.1em;
+#video-grid .video.w2:not(.h2) a {
+    float: left;
+    width: 50%;
+    overflow: hidden;
+    height: 100%;
+    text-indent: -18%;
 }
 
-.video div.rate {
-    position: absolute;
+#video-grid .video.w2:not(.h2) a img {
+    height: 100%;
     width: auto;
-    margin-left: 3%;
-    top: 92%;
-    right: auto;
-    color: #fff;
-    font-size: 1.1em;
 }
 
-.video div.shares {
-    position: absolute;
-    width: auto;
-    top: 92%;
-    right: 40%;
-    color: #fff;
-    font-size: 1.1em;
+#video-grid .video.w2:not(.h2) .title {
+    float: left;
+}
+
+#video-grid .video.w2:not(.h2) .status {
+    width: 50%;
+    right: 0px;
+}
+
+#video-grid .video.w2.h2 .title,
+#video-grid .video.w2.h2 .status div {
+    font-size: 20px;
 }
 /* END Video Grid */
 
+/* SIGN-IN Pop-up*/
+
+#signin-left {
+    margin-top: 2em;
+    border-right: solid 1px #c0bfcf;
+}
+#signin-right {
+    margin-top: 2em;
+}
+div#signin-left form input{
+    margin-bottom: 0.5em;
+    width: 80%;
+    margin-left: 10%;
+}
+
+div#signin-left form button {
+    margin-right: 10%;
+    padding-left: 10%;
+    padding-right: 10%;
+    float:right;
+    margin-bottom: 10px;
+}
 

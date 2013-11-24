@@ -1,3 +1,7 @@
 # Ignore application project files
 .idea/
+<<<<<<< HEAD
 .DS_STORE
+=======
+.DS_Store
+>>>>>>> a713361f20f02c508059c53660e798cf34d1f39b
